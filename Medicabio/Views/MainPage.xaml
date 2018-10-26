@@ -18,7 +18,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:ItemsPage />
+                <views:LectionsPage />
             </x:Arguments>
         </NavigationPage>
         <NavigationPage Title="Argomenti">
@@ -39,6 +39,16 @@
             </NavigationPage.Icon>
             <x:Arguments>
                 <views:AcademyPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Segnalazioni">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="signal.png" />
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:SignalPage />
             </x:Arguments>
         </NavigationPage>
        

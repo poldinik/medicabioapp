@@ -24,7 +24,7 @@
             
    
             <Image Source="back.png" VerticalOptions="End"></Image>
-            <Image Source="medicabiobacksummary.png" VerticalOptions="End" TranslationY="40"></Image>
+            <Image Source="medicabiobacksummary.png" VerticalOptions="End" TranslationY="50"></Image>
             <Label Text="Lorenzo Vannucchi" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" TranslationY="45" FontSize="24" FontAttributes="Bold"></Label>
             <Label Text="Programmatore" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" TranslationY="70" FontSize="16" ></Label>
             <Image Source="account2.png" HorizontalOptions="Center" VerticalOptions="End" WidthRequest="100" HeightRequest="100" TranslationY="-140"></Image>
