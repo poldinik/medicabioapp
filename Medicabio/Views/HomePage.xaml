@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Medicabio.Views.HomePage" Title="Home">
+  
+    <ContentPage.ToolbarItems>
+        <ToolbarItem>
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="bell.png" />
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <Grid RowSpacing="0">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="AUTO"/>
+            </Grid.RowDefinitions>
+            
+   
+            <Image Source="back.png" VerticalOptions="End"></Image>
+            <Image Source="medicabiobacksummary.png" VerticalOptions="End" TranslationY="40"></Image>
+            <Label Text="Lorenzo Vannucchi" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" TranslationY="45" FontSize="24" FontAttributes="Bold"></Label>
+            <Label Text="Programmatore" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" TranslationY="70" FontSize="16" ></Label>
+            <Image Source="account2.png" HorizontalOptions="Center" VerticalOptions="End" WidthRequest="100" HeightRequest="100" TranslationY="-140"></Image>
+            
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <StackLayout Grid.Column="0">
+                    <Label Text="5" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+                    <Label Text="Token"  HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Grid.Column="1" >
+                    <Label Text="22"  HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                    <Label Text="Segnalazioni"  HorizontalTextAlignment="Center"/>
+                </StackLayout>
+                <StackLayout Grid.Column="2">
+                    <Label Text="3"  HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+                    <Label Text="Corsi"  HorizontalTextAlignment="Center"/>
+                </StackLayout>
+            </Grid>
+             <TableView Grid.Row="2" TranslationY="50" Intent="Settings" BackgroundColor="White">
+                <TableRoot>
+                   <TableSection Title="Impostazioni">
+                        
+                        <SwitchCell Text="Notifiche" On="true" />
+                        <EntryCell Text="lorenzo.vannucchi1993@gmail.com" Label="Email" />
+                        <EntryCell Text="3402502857" Label="Cellulare" />
+                        
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <BoxView BackgroundColor="White" Grid.Row="3"/>
+                
+        </Grid>
+    
+        
+    </ContentPage.Content>
+</ContentPage>
