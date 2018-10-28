@@ -29,6 +29,8 @@
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer: a.wlafiorentina@hotmail.it (6UQ98CV227)</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignProvision>iOS Team Provisioning Profile: com.cosmink.Medicabio</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -136,6 +138,7 @@
     <BundleResource Include="Resources\account2.png" />
     <BundleResource Include="Resources\bell.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <BundleResource Include="Resources\cardkey.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
