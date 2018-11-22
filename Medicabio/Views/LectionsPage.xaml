@@ -12,10 +12,10 @@
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="20,50,50,50">
-                                <Label Text="{Binding Title}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="Medium" FontAttributes="Bold"/>
-                                <Label Text="{Binding Date}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" TextColor="Gray"/>
-                                <Label Text="{Binding Location}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" TextColor="Gray"/>
-                                <Label Text="{Binding City}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="13" TextColor="Gray"/>
+                                <Label Text="{Binding Title}" LineBreakMode="NoWrap" FontSize="Medium" FontAttributes="Bold"/>
+                                <Label Text="{Binding Date}" LineBreakMode="NoWrap" FontSize="13" TextColor="Gray"/>
+                                <Label Text="{Binding Location}" LineBreakMode="NoWrap"  FontSize="13" TextColor="Gray"/>
+                                <Label Text="{Binding City}" LineBreakMode="NoWrap" FontSize="13" TextColor="Gray"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

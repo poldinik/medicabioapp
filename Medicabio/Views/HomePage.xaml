@@ -1,18 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Medicabio.Views.HomePage" Title="Home">
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:microcharts="clr-namespace:Microcharts.Forms;assembly=Microcharts.Forms"
+    x:Class="Medicabio.Views.HomePage" 
+    Title="Medicabio">
   
     <ContentPage.ToolbarItems>
         <ToolbarItem>
             <ToolbarItem.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="bell.png" />
+                    <On Platform="iOS" Value="notify_bell.png"/>
                 </OnPlatform>
+               
             </ToolbarItem.Icon>
         </ToolbarItem>
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <Grid RowSpacing="0">
+        <ScrollView>
+            <StackLayout>
+                <BoxView Color="#0a9591" HeightRequest="100">
+                
+                </BoxView>
+                <StackLayout>
+                <Image Source="carduser.png" VerticalOptions="End" TranslationY="-70"></Image>
+                <Grid RowSpacing="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>    
+                    </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="Dott. Mario Rossi" TranslationX="30" TranslationY="-180" FontFamily="Lato-Bold"></Label>
+                        <Label Grid.Row="1" Text="mario.rossi@gmail.com" TranslationX="30" TranslationY="-180"></Label>
+                        <microcharts:ChartView Grid.Row="2" HeightRequest="200" x:Name="chartView" TranslationY="-130"/>
+                        <Label Grid.Row="3" Text="Token" TranslationX="30" TranslationY="-130"></Label>
+                        <Label Grid.Row="4" Text="Appuntamenti" TranslationX="30" TranslationY="-130"></Label>
+                        <Label Grid.Row="5" Text="Corsi" TranslationX="30" TranslationY="-130"></Label>
+                    </Grid>
+                </StackLayout>
+                <TableView Intent="Menu">
+                    <TableRoot>
+                <TableSection Title="Getting Started">
+                    <ViewCell>
+                        <StackLayout>
+                                    
+                        </StackLayout>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+                </TableView>
+            </StackLayout>
+        </ScrollView>
+        
+       
+        
+        <!--<Grid RowSpacing="0">
             
             <Grid.RowDefinitions>
                 <RowDefinition Height="AUTO"/>
@@ -24,8 +70,8 @@
             
    
             <Image Source="back.png" VerticalOptions="End"></Image>
-            <Label Text="Lorenzo Vannucchi" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" TranslationY="45" FontSize="24" FontAttributes="Bold"></Label>
-            <Label Text="Programmatore" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" TranslationY="70" FontSize="16" ></Label>
+            <Label Text="Mario Rossi" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" TranslationY="45" FontSize="24" FontAttributes="Bold"></Label>
+            <Label Text="Infermiere" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center" TranslationY="70" FontSize="16" ></Label>
             <Image Source="account2.png" HorizontalOptions="Center" VerticalOptions="End" WidthRequest="100" HeightRequest="100" TranslationY="-140"></Image>
             
             <Grid Grid.Row="1">
@@ -41,7 +87,7 @@
                 </StackLayout>
                 <StackLayout Grid.Column="1" >
                     <Label Text="22"  HorizontalTextAlignment="Center" FontAttributes="Bold"/>
-                    <Label Text="Segnalazioni"  HorizontalTextAlignment="Center"/>
+                    <Label Text="Appuntamenti"  HorizontalTextAlignment="Center"/>
                 </StackLayout>
                 <StackLayout Grid.Column="2">
                     <Label Text="3"  HorizontalTextAlignment="Center" FontAttributes="Bold"/>
@@ -52,16 +98,16 @@
                 <TableRoot>
                    <TableSection Title="Impostazioni">
                         
-                        <SwitchCell Text="Notifiche" On="true" />
-                        <EntryCell Text="lorenzo.vannucchi1993@gmail.com" Label="Email" />
-                        <EntryCell Text="3402502857" Label="Cellulare" />
+                        <SwitchCell Text="Notifiche" On="true"/>
+                        <EntryCell Text="mario.rossi@gmail.com" Label="Email"/>
+                        <EntryCell Text="3323245677" Label="Cellulare" />
                         
                     </TableSection>
                 </TableRoot>
             </TableView>
             <BoxView BackgroundColor="White" Grid.Row="3"/>
                 
-        </Grid>
+        </Grid>-->
     
         
     </ContentPage.Content>

@@ -11,5 +11,10 @@ namespace Medicabio.Views
         {
             InitializeComponent();
         }
+
+        async void AddAppointment_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new NewAppointmentPage()));
+        }
     }
 }

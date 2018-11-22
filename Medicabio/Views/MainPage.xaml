@@ -4,17 +4,27 @@
         <NavigationPage Title="Home">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="home.png" />
+                    <On Platform="iOS" Value="tab_home.png" />
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
                 <views:HomePage />
             </x:Arguments>
         </NavigationPage>
+        <NavigationPage Title="Appuntamenti">
+            <NavigationPage.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="iOS" Value="tab_appintment.png" />
+                </OnPlatform>
+            </NavigationPage.Icon>
+            <x:Arguments>
+                <views:SignalPage />
+            </x:Arguments>
+        </NavigationPage>
         <NavigationPage Title="Corsi">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="lections.png" />
+                    <On Platform="iOS" Value="tab_sessions.png" />
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
@@ -24,7 +34,7 @@
         <NavigationPage Title="Argomenti">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="topics.png" />
+                    <On Platform="iOS" Value="tab_topics.png" />
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
@@ -34,23 +44,12 @@
         <NavigationPage Title="Academy">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="academy.png" />
+                    <On Platform="iOS" Value="tab_minihacks.png" />
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
                 <views:AcademyPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Segnalazioni">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="signal.png" />
-                </OnPlatform>
-            </NavigationPage.Icon>
-            <x:Arguments>
-                <views:SignalPage />
-            </x:Arguments>
-        </NavigationPage>
-       
     </TabbedPage.Children>
 </TabbedPage>

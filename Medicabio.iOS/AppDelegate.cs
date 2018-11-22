@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Social;
 using UIKit;
 
 namespace Medicabio.iOS
@@ -22,9 +23,27 @@ namespace Medicabio.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+       
+            var tint = UIColor.FromRGB(10, 149, 145);
+            //UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(250, 250, 250); //bar background
+            //UINavigationBar.Appearance.TintColor = tint; //Tint color of button items
+
+            //UIBarButtonItem.Appearance.TintColor = tint; //Tint color of button items
+
+            UITabBar.Appearance.TintColor = tint;
+
+            UISwitch.Appearance.OnTintColor = tint;
+
+            UIAlertView.Appearance.TintColor = tint;
+
+            //serve per elimare l'ombra nella barra header per creare continuità con il content sottostante
+            UINavigationBar.Appearance.ShadowImage = new UIImage();
+
+            UIView.AppearanceWhenContainedIn(typeof(UIAlertController)).TintColor = tint;
+            UIView.AppearanceWhenContainedIn(typeof(UIActivityViewController)).TintColor = tint;
+            UIView.AppearanceWhenContainedIn(typeof(SLComposeViewController)).TintColor = tint;
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
             return base.FinishedLaunching(app, options);
         }
     }

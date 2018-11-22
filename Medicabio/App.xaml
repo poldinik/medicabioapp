@@ -3,11 +3,17 @@
     <Application.Resources>
         <ResourceDictionary>
             <!--Global Styles-->
-            <Color x:Key="NavigationPrimary">#004D64</Color>
+            <Color x:Key="NavigationPrimary">#0a9591</Color>
             <Style TargetType="NavigationPage">
                 <Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Lato-Regular"/>
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="FontFamily" Value="Lato-Regular"/>
+            </Style> 
         </ResourceDictionary>
     </Application.Resources>
 </Application>
