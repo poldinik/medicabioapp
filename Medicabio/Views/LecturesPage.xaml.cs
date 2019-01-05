@@ -8,15 +8,15 @@ using Medicabio.ViewModels;
 namespace Medicabio.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class LectionsPage : ContentPage
+    public partial class LecturesPage : ContentPage
     {
-        LectionsViewModel viewModel;
+        LecturesViewModel viewModel;
 
-        public LectionsPage()
+        public LecturesPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new LectionsViewModel();
+            BindingContext = viewModel = new LecturesViewModel();
         }
 
 

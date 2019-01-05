@@ -32,19 +32,21 @@
                         <RowDefinition Height="AUTO"/>
                         <RowDefinition Height="AUTO"/>
                         <RowDefinition Height="AUTO"/>
+                        <RowDefinition Height="AUTO"/>
                         <RowDefinition Height="AUTO"/>    
                     </Grid.RowDefinitions>
-                        <Label Grid.Row="0" Text="Dott. Mario Rossi" TranslationX="30" TranslationY="-180" FontFamily="Lato-Bold"></Label>
-                        <Label Grid.Row="1" Text="mario.rossi@gmail.com" TranslationX="30" TranslationY="-180"></Label>
+                        <Label Grid.Row="0" Text="Dott. Mario Caio" TranslationX="30" TranslationY="-180" FontFamily="Montserrat-Bold"></Label>
+                        <Label Grid.Row="1" Text="mario.caio@medicabio.com" TranslationX="30" TranslationY="-180"></Label>
                         <microcharts:ChartView Grid.Row="2" HeightRequest="200" x:Name="chartView" TranslationY="-130"/>
                         <Label Grid.Row="3" Text="Token" TranslationX="30" TranslationY="-130"></Label>
                         <Label Grid.Row="4" Text="Appuntamenti" TranslationX="30" TranslationY="-130"></Label>
                         <Label Grid.Row="5" Text="Corsi" TranslationX="30" TranslationY="-130"></Label>
+                        <microcharts:ChartView Grid.Row="6" HeightRequest="200" x:Name="chartView2" TranslationY="-130"/>
                     </Grid>
                 </StackLayout>
                 <TableView Intent="Menu">
                     <TableRoot>
-                <TableSection Title="Getting Started">
+                <TableSection Title="Il tuo materiale">
                     <ViewCell>
                         <StackLayout>
                                     

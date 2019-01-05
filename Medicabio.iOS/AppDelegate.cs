@@ -32,12 +32,20 @@ namespace Medicabio.iOS
 
             UITabBar.Appearance.TintColor = tint;
 
+            UITextAttributes txtAttributes = new UITextAttributes
+            {
+                Font = UIFont.FromName("Montserrat-Regular", 9.0F)
+            };
+            UITabBarItem.Appearance.SetTitleTextAttributes(txtAttributes, UIControlState.Normal);
+
+
             UISwitch.Appearance.OnTintColor = tint;
 
             UIAlertView.Appearance.TintColor = tint;
 
             //serve per elimare l'ombra nella barra header per creare continuità con il content sottostante
             UINavigationBar.Appearance.ShadowImage = new UIImage();
+            //UINavigationBar.Appearance.SetTitleTextAttributes(txtAttributes);
 
             UIView.AppearanceWhenContainedIn(typeof(UIAlertController)).TintColor = tint;
             UIView.AppearanceWhenContainedIn(typeof(UIActivityViewController)).TintColor = tint;

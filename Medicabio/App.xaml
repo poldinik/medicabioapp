@@ -9,10 +9,10 @@
                 <Setter Property="BarTextColor" Value="White" />
             </Style>
             <Style TargetType="Label">
-                <Setter Property="FontFamily" Value="Lato-Regular"/>
+                <Setter Property="FontFamily" Value="Montserrat-Regular"/>
             </Style>
             <Style TargetType="Entry">
-                <Setter Property="FontFamily" Value="Lato-Regular"/>
+                <Setter Property="FontFamily" Value="Montserrat-Regular"/>
             </Style> 
         </ResourceDictionary>
     </Application.Resources>

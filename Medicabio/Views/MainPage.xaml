@@ -28,7 +28,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:LectionsPage />
+                <views:LecturesPage />
             </x:Arguments>
         </NavigationPage>
         <NavigationPage Title="Argomenti">

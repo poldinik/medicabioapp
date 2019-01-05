@@ -28,6 +28,7 @@ namespace Medicabio.Views
           
 
             this.chartView.Chart = viewModel.GoalsChart;
+            this.chartView2.Chart = viewModel.AppointmentChart;
         }
     }
 }

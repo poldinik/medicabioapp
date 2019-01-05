@@ -4,5 +4,24 @@
         <ToolbarItem Text="Aggiungi" Clicked="AddAppointment_Clicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="ItemsListView" ItemsSource="{Binding Appointments}" VerticalOptions="FillAndExpand" HasUnevenRows="true" RefreshCommand="{Binding LoadItemsCommand}" IsPullToRefreshEnabled="true" IsRefreshing="{Binding IsBusy, Mode=OneWay}" CachingStrategy="RecycleElement" >
+                <ListView.Header>
+                    <StackLayout Orientation="Horizontal" Padding="20">
+                        <Label Text="Effettuati" FontSize="Large" FontAttributes="Bold"/>
+                    </StackLayout>
+                </ListView.Header>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="20,50,50,50">
+                                <Label Text="{Binding Patience}" LineBreakMode="NoWrap" FontSize="16" />
+                                <Label Text="{Binding Phone}" LineBreakMode="NoWrap" FontSize="13" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

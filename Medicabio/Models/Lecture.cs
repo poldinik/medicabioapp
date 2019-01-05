@@ -1,12 +1,15 @@
 ﻿using System;
 namespace Medicabio.Models
 {
-    public class Lection
+    public class Lecture
     {
-        public Lection()
+        public Lecture()
         {
         }
 
+        public int Id { get; set; }
+        public string Uuid { get; set; }
+        public LectureDetails LectureDetails { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public string Date { get; set; }
