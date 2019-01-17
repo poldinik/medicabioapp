@@ -14,7 +14,7 @@ namespace Medicabio
             InitializeComponent();
 
 
-            MainPage = new MainPage();
+            MainPage = new LoginPage(new ViewModels.LoginViewModel());
         }
 
         protected override void OnStart()

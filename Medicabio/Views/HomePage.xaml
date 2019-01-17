@@ -12,7 +12,6 @@
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="notify_bell.png"/>
                 </OnPlatform>
-               
             </ToolbarItem.Icon>
         </ToolbarItem>
     </ContentPage.ToolbarItems>

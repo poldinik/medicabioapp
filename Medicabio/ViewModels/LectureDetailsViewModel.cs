@@ -53,12 +53,13 @@ namespace Medicabio.ViewModels
         public async void LoadLecture()
         {
             Lecture = await GetLectureAsync();
-            Console.WriteLine(Lecture);
+            Console.WriteLine("Lecture recuperata" + Lecture.LectureDetails.Title.ToString());
         }
 
         private Task<Lecture> GetLectureAsync()
         {
             Debug.WriteLine("get Lecture " + LectureId);
+
             return restService.GetResponse<Lecture>(Constants.urlApi + "lectures"+ "/" + LectureId, false);
         }
     }

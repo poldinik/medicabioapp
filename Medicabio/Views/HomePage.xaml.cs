@@ -30,5 +30,10 @@ namespace Medicabio.Views
             this.chartView.Chart = viewModel.GoalsChart;
             this.chartView2.Chart = viewModel.AppointmentChart;
         }
+
+        async void OnAgentButton_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new NavigationPage(new AgentPage()));
+        }
     }
 }

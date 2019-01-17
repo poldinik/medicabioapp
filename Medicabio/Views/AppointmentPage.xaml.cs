@@ -5,11 +5,11 @@ using Xamarin.Forms;
 
 namespace Medicabio.Views
 {
-    public partial class SignalPage : ContentPage
+    public partial class AppointmentPage : ContentPage
     {
         AppointmentViewModel viewModel;
 
-        public SignalPage()
+        public AppointmentPage()
         {
             InitializeComponent();
             viewModel = new AppointmentViewModel();

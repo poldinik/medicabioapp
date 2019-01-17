@@ -1,5 +1,63 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Medicabio.Views.LectureDetailsPage">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Medicabio.Views.LectureDetailsPage" Title="{Binding LectureDetails.Title}">
     <ContentPage.Content>
+        <StackLayout>
+            <StackLayout 
+                Padding="0"
+                HorizontalOptions="FillAndExpand">
+                    <Label
+                        Text="{Binding Lecture.LectureDetails.Title}"
+                        FontSize="Large"
+                        TextColor="White"
+                        BackgroundColor="Teal"
+                        StyleId="SessionTitle"/>
+                    <Label
+                        x:Name="SessionDate"
+                        Text="{Binding Lecture.LectureDetails.Date}"
+                        TextColor="White"
+                        BackgroundColor="Teal"
+                        StyleId="SessionDate"/>
+             </StackLayout>
+             <StackLayout BackgroundColor="White">
+                <Button
+                    Text="Programma"      
+                    x:Name="ScheduleName" 
+                    Clicked="OnScheduleButtonClick">
+                    <Button.FontAttributes>
+                        <OnPlatform x:TypeArguments="FontAttributes" iOS="Bold"/>
+                    </Button.FontAttributes>
+                    <Button.BackgroundColor>
+                        <OnPlatform x:TypeArguments="Color" iOS="Transparent"/>
+                    </Button.BackgroundColor>
+                    <Button.BorderWidth>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="1"/>
+                    </Button.BorderWidth> 
+                </Button>
+             </StackLayout>
+            <StackLayout>
+                <Label
+                    Text="{Binding Lecture.LectureDetails.Description}"
+                    >
+                    
+                </Label>
+            </StackLayout>
+            <StackLayout>
+                <Button
+                    Clicked="OnRegisterButtonClick"
+                    Text="Voglio iscrivermi"
+                    x:Name="registerButtonName">
+                    <Button.FontAttributes>
+                        <OnPlatform x:TypeArguments="FontAttributes" iOS="Bold"/>
+                    </Button.FontAttributes>
+                    <Button.BackgroundColor>
+                        <OnPlatform x:TypeArguments="Color" iOS="Transparent"/>
+                    </Button.BackgroundColor>
+                    <Button.BorderWidth>
+                        <OnPlatform x:TypeArguments="x:Double" iOS="1"/>
+                    </Button.BorderWidth> 
+                    
+                </Button>
+            </StackLayout>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

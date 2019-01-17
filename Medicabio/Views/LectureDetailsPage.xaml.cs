@@ -15,7 +15,20 @@ namespace Medicabio.Views
             InitializeComponent();
 
             BindingContext = viewModel = lectureDetailsViewModel;
-         
+
+            //Debug.Print("Titolo della lezione recuperata" + viewModel.Lecture.LectureDetails.Title);
         }
+
+
+        async void OnScheduleButtonClick(object sender, SelectedItemChangedEventArgs args)
+        {
+            Debug.Print("Evento click su schedule");
+        }
+
+        async void OnRegisterButtonClick(object sender, SelectedItemChangedEventArgs args)
+        {
+
+        }
+
     }
 }

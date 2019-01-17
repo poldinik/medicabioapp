@@ -13,6 +13,7 @@ namespace Medicabio.ViewModels
     public class LecturesViewModel : INotifyPropertyChanged
     {
         private List<Lecture> lectures;
+
         public List<Lecture> Lectures
         {
             get

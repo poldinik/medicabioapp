@@ -178,6 +178,18 @@
     <BundleResource Include="Resources\Montserrat-Regular.ttf" />
     <BundleResource Include="Resources\Montserrat-Bold.ttf" />
     <BundleResource Include="Resources\Pacifico-Regular.ttf" />
+    <BundleResource Include="Resources\agent%402x.png" />
+    <BundleResource Include="Resources\agent.png" />
+    <BundleResource Include="Resources\agent%403x.png" />
+    <BundleResource Include="Resources\agent2_1%403x.png" />
+    <BundleResource Include="Resources\agent2_1%402x.png" />
+    <BundleResource Include="Resources\agent2_1.png" />
+    <BundleResource Include="Resources\quote.png" />
+    <BundleResource Include="Resources\catalog%402x.png" />
+    <BundleResource Include="Resources\catalog.png" />
+    <BundleResource Include="Resources\quote%403x.png" />
+    <BundleResource Include="Resources\quote%402x.png" />
+    <BundleResource Include="Resources\catalog%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
