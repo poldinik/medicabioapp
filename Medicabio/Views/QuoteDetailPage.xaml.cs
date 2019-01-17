@@ -10,6 +10,10 @@ namespace Medicabio.Views
         public QuoteDetailPage()
         {
             InitializeComponent();
+
+            var browser = new WebView();
+            browser.Source = "http://xamarin.com";
+            Content = browser;
         }
     }
 }
