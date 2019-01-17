@@ -13,7 +13,8 @@ namespace Medicabio.ViewModels
     {
 
         private List<Quote> quotes;
-        public long AgentId { get; set; }
+
+        public string Title { get; set; }
 
         public RestService restService { get; set; }
 
@@ -30,10 +31,12 @@ namespace Medicabio.ViewModels
             }
         }
 
-        public QuoteViewModel(long AgentId)
+        public QuoteViewModel()
         {
+            Title = "Preventivi";
+            Quotes = new List<Quote>();
             restService = new RestService();
-            this.AgentId = AgentId;
+
 
             LoadQuotes();
         }
@@ -49,15 +52,16 @@ namespace Medicabio.ViewModels
 
         public async void LoadQuotes()
         {
-
+            Debug.Print("chiamo LoadQuotes");
             Quotes = await GetQuotesAsync();
+            Console.WriteLine(Quotes);
 
         }
 
         public Task<List<Quote>> GetQuotesAsync()
         {
             Debug.WriteLine("get Quotes");
-            return restService.GetResponse<List<Quote>>(Constants.urlApi + AgentId.ToString()+ "/" + "quote", true);
+            return restService.GetResponse<List<Quote>>(Constants.urlApi +"agents/" + "1/" + "quotes", true);
         }
 
     }

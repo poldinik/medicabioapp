@@ -2,10 +2,24 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Medicabio.Views.QuotePage"
-             Title="Preventivi">
+             Title="{Binding Title}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Aggiungi" Clicked="AddQuoteClick"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="QuotesListView"  ItemsSource="{Binding Quotes}" VerticalOptions="FillAndExpand" HasUnevenRows="true" SelectedItem="OnItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="20,50,50,50">
+                                <Label Text="{Binding Created}" LineBreakMode="NoWrap" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+                                <Label Text="{Binding Status}" LineBreakMode="NoWrap" FontSize="13" TextColor="Gray"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
