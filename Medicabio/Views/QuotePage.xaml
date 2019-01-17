@@ -8,7 +8,7 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="QuotesListView"  ItemsSource="{Binding Quotes}" VerticalOptions="FillAndExpand" HasUnevenRows="true" SelectedItem="OnItemSelected">
+            <ListView x:Name="QuotesListView"  ItemsSource="{Binding Quotes}" VerticalOptions="FillAndExpand" HasUnevenRows="true" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
