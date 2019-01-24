@@ -38,7 +38,7 @@ namespace Medicabio.ViewModels
             restService = new RestService();
 
 
-            LoadQuotes();
+            //LoadQuotes();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
