@@ -19,7 +19,7 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                <BoxView Color="#0a9591" HeightRequest="100">
+                <BoxView Color="#0FADC2" HeightRequest="100">
                 
                 </BoxView>
                 <StackLayout>

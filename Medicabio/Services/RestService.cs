@@ -92,6 +92,7 @@ namespace Medicabio.Services
                 Console.WriteLine(JsonResult);
                 //JObject result = JObject.Parse(JsonResult);
 
+
                 if (isList)
                 {
                     JArray result = JArray.Parse(JsonResult);

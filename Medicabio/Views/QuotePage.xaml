@@ -4,7 +4,7 @@
              x:Class="Medicabio.Views.QuotePage"
              Title="{Binding Title}">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Aggiungi" Clicked="AddQuoteClick"/>
+        <ToolbarItem Text="Invia" Clicked="SendQuoteClick"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>

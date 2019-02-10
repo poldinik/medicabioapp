@@ -23,8 +23,10 @@ namespace Medicabio.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-       
+
             var tint = UIColor.FromRGB(10, 149, 145);
+
+            tint = UIColor.FromRGB(15, 173, 194);
             //UINavigationBar.Appearance.BarTintColor = UIColor.FromRGB(250, 250, 250); //bar background
             //UINavigationBar.Appearance.TintColor = tint; //Tint color of button items
 

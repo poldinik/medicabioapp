@@ -31,8 +31,9 @@ namespace Medicabio.ViewModels
 
         public ProductViewModel(int Id)
         {
+            Product = new Product();
             restService = new RestService();
-            LoadProduct(Id);
+            //LoadProduct(Id);
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

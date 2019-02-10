@@ -21,7 +21,7 @@ namespace Medicabio.Views
         }
 
 
-        async void AddQuoteClick(object sender, EventArgs e)
+        async void SendQuoteClick(object sender, EventArgs e)
         {
             await Navigation.PushModalAsync(new NavigationPage(new NewQuotePage()));
         }

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="Medicabio.Views.ProductsPage" Title="Catalogo">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="ProductsListView" ItemsSource="{Binding Products}" VerticalOptions="FillAndExpand" HasUnevenRows="true">
+            <ListView x:Name="ProductsListView" ItemsSource="{Binding Products}" VerticalOptions="FillAndExpand" HasUnevenRows="true" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

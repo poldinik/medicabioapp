@@ -29,8 +29,11 @@ namespace Medicabio.ViewModels
 
         public RestService restService { get; set; }
 
-        public ProductsViewModel()
+        private string manufacturerId;
+
+        public ProductsViewModel(string ManufacturerId)
         {
+            manufacturerId = ManufacturerId;
             Products = new List<Product>();
             restService = new RestService();
 
@@ -61,7 +64,7 @@ namespace Medicabio.ViewModels
         {
             //return restService.GetResponse...
             Debug.WriteLine("get Products");
-            return restService.GetResponse<List<Product>>(Constants.urlApi + "products", true);
+            return restService.GetResponse<List<Product>>(Constants.urlApi + "manufacturers/" + manufacturerId+"/products", true);
         }
 
     }
