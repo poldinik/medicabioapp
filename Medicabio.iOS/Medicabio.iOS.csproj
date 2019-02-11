@@ -190,6 +190,7 @@
     <BundleResource Include="Resources\quote%403x.png" />
     <BundleResource Include="Resources\quote%402x.png" />
     <BundleResource Include="Resources\catalog%403x.png" />
+    <BundleResource Include="Resources\MedicabioSQLite.db3" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

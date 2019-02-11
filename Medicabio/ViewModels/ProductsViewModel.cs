@@ -1,70 +1,59 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Medicabio.Models;
 using Medicabio.Services;
+using Xamarin.Forms;
 
 namespace Medicabio.ViewModels
 {
-    public class ProductsViewModel : INotifyPropertyChanged
+    public class ProductsViewModel : BaseViewModel
     {
 
-        private List<Product> products;
+        public ObservableCollection<Product> Products { get; set; }
+        public Command LoadProductsCommand { get; set; }
 
-        public List<Product> Products
-        {
-            get
-            {
-                return products;
-            }
-            set
-            {
-                products = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public RestService restService { get; set; }
+        private RestService restService { get; set; }
 
         private string manufacturerId;
 
         public ProductsViewModel(string ManufacturerId)
         {
             manufacturerId = ManufacturerId;
-            Products = new List<Product>();
             restService = new RestService();
-
-            LoadProducts();
+            Title = "Prodotti";
+            Products = new ObservableCollection<Product>();
+            LoadProductsCommand = new Command(async () => await ExecuteLoadProductsCommand());
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        async Task ExecuteLoadProductsCommand()
         {
-            Debug.WriteLine("property name: " + propertyName);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+            if (IsBusy)
+                return;
 
+            IsBusy = true;
 
-        public async void LoadProducts()
-        {
-            //List<Key> Keys = await GetKeysAsync();
-
-            Products = await GetProductsAsync();
-            Console.WriteLine(Products);
-            //OKeys = new ObservableCollection<Key>(Keys as List<Key>);
-            //Console.WriteLine(_okeys[1].id);
-        }
-
-        public Task<List<Product>> GetProductsAsync()
-        {
-            //return restService.GetResponse...
-            Debug.WriteLine("get Products");
-            return restService.GetResponse<List<Product>>(Constants.urlApi + "manufacturers/" + manufacturerId+"/products", true);
+            try
+            {
+                Products.Clear();
+                var items = await restService.GetResponse<List<Product>>(Constants.urlApi + "manufacturers/" + manufacturerId + "/products", true);
+                foreach (var item in items)
+                {
+                    Products.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
     }

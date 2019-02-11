@@ -2,12 +2,15 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Medicabio.Views;
+using System.IO;
+using Medicabio.Data;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Medicabio
 {
     public partial class App : Application
     {
+        static QuoteProductsDatabase quoteProductDabase;
 
         public App()
         {
@@ -16,6 +19,20 @@ namespace Medicabio
 
             MainPage = new LoginPage(new ViewModels.LoginViewModel());
         }
+
+        public static QuoteProductsDatabase QuoteProductDatabase
+        {
+            get
+            {
+                if (quoteProductDabase == null)
+                {
+                    quoteProductDabase = new QuoteProductsDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "MedicabioSQLite.db3"));
+                }
+                return quoteProductDabase;
+            }
+        }
+
+       //public int ResumeAtTodoId { get; set; }
 
         protected override void OnStart()
         {

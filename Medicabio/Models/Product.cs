@@ -12,5 +12,6 @@ namespace Medicabio.Models
         public int Pack { get; set; }
         public string ArticleNumber { get; set; }
         public Price Price { get; set; }
+        public string Measures { get; set; }
     }
 }

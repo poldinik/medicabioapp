@@ -33,7 +33,7 @@ namespace Medicabio.ViewModels
 
         public QuoteViewModel()
         {
-            Title = "Preventivi";
+            Title = "Preventivo";
             Quotes = new List<Quote>();
             restService = new RestService();
 

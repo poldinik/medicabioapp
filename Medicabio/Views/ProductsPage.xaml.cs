@@ -24,10 +24,18 @@ namespace Medicabio.Views
             if (item == null)
                 return;
 
-            await Navigation.PushAsync(new ProductPage(item.Id));
+            await Navigation.PushAsync(new ProductPage(item.Id.ToString()));
 
             // Manually deselect item.
             ProductsListView.SelectedItem = null;
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            if (viewModel.Products.Count == 0)
+                viewModel.LoadProductsCommand.Execute(null);
         }
     }
 }

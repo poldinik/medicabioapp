@@ -54,7 +54,7 @@
                 <views:TopicsPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Academy">
+        <!--<NavigationPage Title="Academy">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">
                     <On Platform="iOS" Value="tab_minihacks.png" />
@@ -63,7 +63,7 @@
             <x:Arguments>
                 <views:AcademyPage />
             </x:Arguments>
-        </NavigationPage>
+        </NavigationPage>-->
          <NavigationPage Title="Appuntamenti">
             <NavigationPage.Icon>
                 <OnPlatform x:TypeArguments="FileImageSource">

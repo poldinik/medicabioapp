@@ -5,18 +5,15 @@ using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Medicabio.Models;
 using Medicabio.Services;
+using Medicabio.Views;
+using Xamarin.Forms;
 
 namespace Medicabio.ViewModels
 {
-    public class ProductViewModel : INotifyPropertyChanged
+    public class ProductViewModel : BaseViewModel
     {
-
-        public RestService restService { get; set; }
-
-        private Product product;
-
-        public Product Product
-        {
+        private Product product { get; set; }
+        public Product Product {
             get
             {
                 return product;
@@ -27,42 +24,63 @@ namespace Medicabio.ViewModels
                 OnPropertyChanged();
             }
         }
+        public Command LoadProductCommand { get; set; }
+        public RestService restService { get; set; }
 
 
-        public ProductViewModel(int Id)
+        private string productId;
+
+        public ProductViewModel(string ProductId)
         {
-            Product = new Product();
+            productId = ProductId;
             restService = new RestService();
-            //LoadProduct(Id);
+            Product = new Product();
+            LoadProductCommand = new Command(async () => await ExecuteLoadProductCommand());
+
+            //MessagingCenter.Subscribe<ProductPage, Product>(this, "AddProduct", async (obj, item) =>
+            //{
+            //    var newItem = item as Product;
+            //    Items.Add(newItem);
+            //    await DataStore.AddItemAsync(newItem);
+            //});
+
+
+            LoadProduct();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public async void LoadProduct()
         {
-            Debug.WriteLine("property name: " + propertyName);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-
-        public async void LoadProduct(int Id)
-        {
-            //List<Key> Keys = await GetKeysAsync();
-
-            Product = await GetProductAsync(Id);
+            Product = await GetProductAsync();
             Console.WriteLine(Product);
-            //OKeys = new ObservableCollection<Key>(Keys as List<Key>);
-            //Console.WriteLine(_okeys[1].id);
         }
 
-      
-        public Task<Product> GetProductAsync(int Id)
+        public Task<Product> GetProductAsync()
         {
-            //return restService.GetResponse...
-            Debug.WriteLine("get Product " + Id.ToString());
-            return restService.GetResponse<Product>(Constants.urlApi + "products/"+Id.ToString(), false);
+            Debug.WriteLine("get Product " + productId);
+            return restService.GetResponse<Product>(Constants.urlApi + "products/" + productId, false);
         }
 
+        async Task ExecuteLoadProductCommand()
+        {
+            if (IsBusy)
+                return;
+
+            IsBusy = true;
+
+            try
+            {
+                var item = await restService.GetResponse<Product>(Constants.urlApi + "products/" + productId, false);
+                Product = item;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
 
 
     }

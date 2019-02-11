@@ -8,13 +8,13 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="QuotesListView"  ItemsSource="{Binding Quotes}" VerticalOptions="FillAndExpand" HasUnevenRows="true" ItemSelected="OnItemSelected">
+            <ListView x:Name="ProductListView" VerticalOptions="FillAndExpand" HasUnevenRows="true" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="20,50,50,50">
-                                <Label Text="{Binding Created}" LineBreakMode="NoWrap" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
-                                <Label Text="{Binding Status}" LineBreakMode="NoWrap" FontSize="13" TextColor="Gray"/>
+                                <Label Text="{Binding ArticleNumber}" LineBreakMode="NoWrap" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
+                                 <Label Text="{Binding Description}" LineBreakMode="NoWrap" FontSize="Medium" FontAttributes="Bold" TextColor="Black"/>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

@@ -9,15 +9,14 @@ namespace Medicabio.Views
 {
     public partial class QuotePage : ContentPage
     {
-        QuoteViewModel viewModel;
+        //QuoteViewModel viewModel;
 
         public QuotePage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new QuoteViewModel();
-            Console.WriteLine("chiamo oggeto quotes dalla vista");
-            Console.WriteLine(viewModel.Quotes);
+            //BindingContext = viewModel = new QuoteViewModel();
+
         }
 
 
@@ -39,7 +38,16 @@ namespace Medicabio.Views
             await Navigation.PushAsync(new QuoteDetailPage());
 
             // Manually deselect item.
-            QuotesListView.SelectedItem = null;
+            ProductListView.SelectedItem = null;
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            // Reset the 'resume' id, since we just want to re-start here
+            Console.WriteLine(await App.QuoteProductDatabase.GetProductItemsAsync());
+            ProductListView.ItemsSource = await App.QuoteProductDatabase.GetProductItemsAsync();
         }
     }
 }

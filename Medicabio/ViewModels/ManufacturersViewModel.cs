@@ -20,7 +20,7 @@ namespace Medicabio.ViewModels
         public ManufacturersViewModel()
         {
             restService = new RestService();
-            Title = "Prodotti";
+            Title = "Catalogo";
             Manufacturers = new ObservableCollection<Manufacturer>();
             LoadManufacturersCommand = new Command(async () => await ExecuteLoadManufacturersCommand());
         }
