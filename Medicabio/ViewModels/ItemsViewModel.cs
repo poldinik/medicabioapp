@@ -27,6 +27,7 @@ namespace Medicabio.ViewModels
                 Items.Add(newItem);
                 await DataStore.AddItemAsync(newItem);
             });
+
         }
 
         async Task ExecuteLoadItemsCommand()

@@ -3,7 +3,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="{Binding Product.ArticleNumber}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="13" />
-            <Button Text="Click to Rotate Text!"
+            <Button Text="Aggiungi a preventivo"
                 VerticalOptions="CenterAndExpand"
                 HorizontalOptions="Center"
                 Clicked="AddProductToQuote_Clicked" />

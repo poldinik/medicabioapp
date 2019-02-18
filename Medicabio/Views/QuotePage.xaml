@@ -8,7 +8,7 @@
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="ProductListView" VerticalOptions="FillAndExpand" HasUnevenRows="true" ItemSelected="OnItemSelected">
+            <ListView x:Name="ProductListView" ItemsSource="{Binding ProductItems}" VerticalOptions="FillAndExpand" HasUnevenRows="true" ItemSelected="OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

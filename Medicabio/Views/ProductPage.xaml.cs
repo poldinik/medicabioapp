@@ -16,7 +16,7 @@ namespace Medicabio.Views
         {
             InitializeComponent();
             BindingContext = viewModel = new ProductViewModel(Id.ToString());
-            product = viewModel.Product;
+
         }
 
         //async void AddProductToQuote_Clicked(object sender, EventArgs e)
@@ -29,10 +29,15 @@ namespace Medicabio.Views
         {
 
             ProductItem productItem = new ProductItem();
-            productItem.Id = product.Id;
-            productItem.ArticleNumber = product.ArticleNumber;
-            productItem.Description = product.Description;
-            await App.QuoteProductDatabase.SaveProductItemAsync(productItem);
+
+            productItem.Id = viewModel.Product.Id;
+            productItem.ArticleNumber = viewModel.Product.ArticleNumber;
+            productItem.Description = viewModel.Product.Description;
+
+            Debug.WriteLine("On Add product method" + productItem.ArticleNumber);
+
+            MessagingCenter.Send(this, "AddProductItem", productItem);
+            //await App.QuoteProductDatabase.SaveProductItemAsync(productItem);
             //Debug.Write("Salvo oggetto");
             //Debug.WriteLine(await App.QuoteProductDatabase.SaveProductItemAsync(productItem));
             await Navigation.PopAsync();

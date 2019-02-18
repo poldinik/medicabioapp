@@ -1,22 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Medicabio.Models;
 using Medicabio.Services;
+using Medicabio.Views;
+using Xamarin.Forms;
 
 namespace Medicabio.ViewModels
 {
-    public class QuoteViewModel : INotifyPropertyChanged
+    public class QuoteViewModel : BaseViewModel
     {
 
         private List<Quote> quotes;
+        private ObservableCollection<ProductItem> productItems { get; set; }
+        public ObservableCollection<ProductItem> ProductItems
+        {
+            get
+            {
+                return productItems;
+            }
+            set
+            {
+                productItems = value;
+                OnPropertyChanged();
+            }
+        }
 
-        public string Title { get; set; }
+
 
         public RestService restService { get; set; }
+        public Command LoadProductItems { get; set; }
 
         public List<Quote> Quotes
         {
@@ -30,25 +47,69 @@ namespace Medicabio.ViewModels
                 OnPropertyChanged();
             }
         }
+        
+        
 
         public QuoteViewModel()
         {
             Title = "Preventivo";
             Quotes = new List<Quote>();
-            restService = new RestService();
+            ProductItems = new ObservableCollection<ProductItem>();
 
+            //ProductItem productItem = new ProductItem();
+            //productItem.Id = 1;
+            //productItem.ArticleNumber = "dfsdsds";
+            //productItem.Description = "descrizione";
+
+            //ProductItems.Add(productItem);
+
+            restService = new RestService();
+            //LoadProductItems = new Command(async () => await ExecuteLoadProductItemsCommand());
+
+            MessagingCenter.Subscribe<ProductPage, ProductItem>(this, "AddProductItem", (obj, item) =>
+            {
+                Debug.WriteLine("Aggiungo prodotto a preventivo");
+                var newItem = item as ProductItem;
+                Debug.WriteLine(newItem.ArticleNumber);
+                ProductItems.Add(newItem);
+                //ProductItems = ProductItems;
+                //await DataStore.AddItemAsync(newItem);
+            });
 
             //LoadQuotes();
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+      
 
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+
+        async Task ExecuteLoadProductItemsCommand()
         {
-            Debug.WriteLine("property name: " + propertyName);
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            if (IsBusy)
+                return;
+
+            IsBusy = true;
+
+            try
+            {
+                ProductItems.Clear();
+                //var items = await restService.GetResponse<List<Product>>(Constants.urlApi + "manufacturers/" + manufacturerId + "/products", true);
+                var items = await App.QuoteProductDatabase.GetProductItemsAsync();
+
+                ProductItems = new ObservableCollection<ProductItem>(items);
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
         }
 
+
+      
 
         public async void LoadQuotes()
         {
